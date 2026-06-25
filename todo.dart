@@ -1,3 +1,7 @@
+// Author: Tanmoy Samanta
+// Date: 23 -25 june 2026 
+// Add to the flutter application as main.dart and build according  to your device//.
+//@ by Tanmoy Samanta Not for flutter and Personal use
 import 'dart:io';
 import 'dart:math';
 import 'package:flutter/foundation.dart';
