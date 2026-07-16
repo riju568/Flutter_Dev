@@ -23,6 +23,7 @@ class CalculatorGame extends FlameGame with TapCallbacks {
   late KeyboardComponent keyboard;
   String currentExpression = '';
   String currentResult = '';
+  bool _isLoaded = false;
 
   @override
   Color backgroundColor() => const Color(0xFF19191D);
@@ -33,6 +34,21 @@ class CalculatorGame extends FlameGame with TapCallbacks {
     keyboard = KeyboardComponent(onButtonPressed: _handleButtonPress)..size = Vector2(size.x, size.y * 0.72)..position = Vector2(0, size.y * 0.28);
     await add(display);
     await add(keyboard);
+    display.cacheDisplay();
+    keyboard.cacheStaticKeyboard();
+    _isLoaded = true;
+  }
+
+  @override
+  void onGameResize(Vector2 size) {
+    super.onGameResize(size);
+    if (_isLoaded) {
+      display.size = Vector2(size.x, size.y * 0.28);
+      display.cacheDisplay();
+      keyboard.size = Vector2(size.x, size.y * 0.72);
+      keyboard.position = Vector2(0, size.y * 0.28);
+      keyboard.cacheStaticKeyboard();
+    }
   }
 
   void _handleButtonPress(String label, String mathValue) {
@@ -134,25 +150,22 @@ class ButtonDef {
   late TextPainter tp;
   Rect? rect;
   ButtonDef(this.label, this.mathValue, this.color) {
-    tp = TextPainter(text: TextSpan(text: label, style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold)), textDirection: TextDirection.ltr)..layout();
+    tp = TextPainter(text: TextSpan(text: label, style: const TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold)), textDirection: TextDirection.ltr)..layout();
   }
 }
-
-
------------------ pubspec.yaml ---------------------------
+-------------------------pubspec.yaml--------------------------
 name: calculator_app
 description: "A scientific calculator."
 publish_to: 'none' 
 version: 1.0.0+1
 
-
+environment:
+  sdk: '^3.12.0'
 
 dependencies:
   flutter:
     sdk: flutter
-  # Flame engine for high-performance canvas rendering
   flame: ^1.16.0
-  # Math parser for accurate calculations
   math_expressions: ^2.3.1
 
 dev_dependencies:
@@ -163,4 +176,4 @@ dev_dependencies:
 flutter:
   uses-material-design: true
 
---------------------------------------------------------
+-----------------------------------------------------------
