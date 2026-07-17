@@ -67,16 +67,16 @@ dart run build_runner build --delete-conflicting-outputs
 The organizational layout map below highlights standard naming patterns enforced across features:
 
 lib/  
-├── main.dart # Application initialization entryway  
-├── app.dart # Global MaterialApp configuration & theme route configs  
-├── core/ # Shared modules across multi-feature blocks  
-│ ├── constants/ # Global style sheets, asset addresses, network endpoints  
-│ ├── network/ # Http client setups, token refresh protocols, middleware  
-│ ├── theme/ # Material Design 3 color schemes (Dark/Light configurations)  
-│ └── utils/ # Generic validators, date wrappers, math decorators  
-└── features/ # Business units split via explicit domains  
-└── authentication/ # Isolated context example (Auth Subsystem)  
-├── data/ # Models, sources, and remote repositories  
+├── main.dart        # Application initialization entryway  
+├── app.dart         # Global MaterialApp configuration & theme route configs  
+├── core/            # Shared modules across multi-feature blocks  
+│ ├── constants/     # Global style sheets, asset addresses, network endpoints  
+│ ├── network/         # Http client setups, token refresh protocols, middleware  
+│ ├── theme/           # Material Design 3 color schemes (Dark/Light configurations)  
+│ └── utils/          # Generic validators, date wrappers, math decorators  
+└── features/         # Business units split via explicit domains  
+└── authentication/   # Isolated context example (Auth Subsystem)  
+├── data/             # Models, sources, and remote repositories  
 ├── domain/ # Logical entities and explicit feature usecases  
 └── presentation/ # View states, event blocs, and custom layout views
 
