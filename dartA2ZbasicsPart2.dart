@@ -76,5 +76,28 @@ void main() {
     print("odd: $i"); 
   }
 }
+  // List
+  List<String> names149 = ['Jack', 'jaill'];
+  print(names149);
+  for (var n in names149) {
+    print(n);
+  }
 
+  // Collection 
+  List<String> name151 = ['hello', 'Fiends'];
+  // Create a new list
+  var names152 = [...name151]; 
+  names152[1] = 'Mark';
+  for (var n in names152) {
+    print(n);
+  }
+
+  // Map
+  // Use Map<KeyType, ValueType>() constructor or literal
+  var gift221 = <String, String>{}; 
+  print(gift221);
+  gift221['first'] = 'Mego';
+  print(gift221['first']); 
+  var gift222 = {'first': 'Mango', 'second': 'Jack Friend'};
+  print(gift222['second']);
 
