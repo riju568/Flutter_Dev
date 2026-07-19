@@ -58,8 +58,40 @@ void main() {
   assert(piAsString == '3.14');
 
   // const keyword
-  const constNum = 0;
-  print('Constant number: $constNum');
+  const aConstNum = 0; // int constant
+  const aConstBool = true; // bool constant
+  const aConstString = 'a contract';
+  print(aConstNum);
+  print(aConstBool);
+  print(aConstString);
+  // Use .runtimeType instead of .runtime
+  print(aConstNum.runtimeType);
+  print(aConstBool.runtimeType);
+  print(aConstString.runtimeType);
+  int num12 = 0;
+  print(num12);
+
+  int num13 = 10 + 22;
+  print(num13);
+
+  // Relational operators
+  if (num13 == 100) {
+    print("num13 is 100");
+  }
+
+  num13 *= 2; // num13 = num13 * 2;
+  print(num13);
+
+  // Unary Operator
+  ++num13;
+  num13++;
+  print(num13);
+  num13++;
+  num13 += 1;
+  num13 -= 1;
+  print(num13);
+
+  
 
 }
 
