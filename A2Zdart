@@ -1,0 +1,68 @@
+import 'dart:io';
+
+class Num {
+  int num = 10;
+}
+
+void main() {
+  // 1. Basics and Variables
+  print("Hello World");
+  var firstName = 'Mahmud';
+  String lastName = 'A';
+  print('$firstName $lastName');
+
+  int amount1 = 100;
+  print('amount1: $amount1');
+
+  dynamic weakVariable = 100;
+  weakVariable = 'Dart programming';
+  print('weakVariable: $weakVariable');
+
+  // 2. String handling
+  var s1 = 'Single quotes work well';
+  var s23 = r'In a raw string, not even \n gets special treatment';
+  print(s23);
+
+  // 3. Conversion
+  var one = int.parse('1');
+  print('one: $one');
+
+  // 4. Operators and Control Flow
+  int num13 = 10 + 22;
+  num13 *= 2;
+  
+  // Fixed logic check from your snippet
+  int num14 = 210;
+  int num15 = 10;
+  if (num14 > 200 && num13 < 203) {
+    print('200 to 203 range');
+  }
+
+  if (num15 != 100) {
+    print('Num is not equal to 100'); 
+  }
+
+  // 5. Null Aware and Ternary
+  int? number16;
+  number16 ??= 100; // Assigns 100 if null
+  print('number16: $number16');
+
+  int x11 = 100;
+  var result122 = x11 % 2 == 0 ? 'Even' : 'Odd';
+  print(result122);
+
+  // 6. Loops
+  for (var i = 0; i < 5; ++i) {
+    if (i % 2 == 0) continue;
+    print("odd: $i");
+  }
+
+  // 7. Collections (Lists and Maps)
+  List<String> names149 = ['Jack', 'jaill'];
+  var names152 = [...names149];
+  names152[1] = 'Mark';
+  print(names152);
+
+  var gift222 = {'first': 'Mango', 'second': 'Jack Friend'};
+  print(gift222['second']);
+}
