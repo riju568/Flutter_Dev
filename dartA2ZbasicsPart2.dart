@@ -67,12 +67,14 @@ void main() {
 
   // Break and Continue
   for (var i = 0; i < 10; ++i) {
-    if (i > 5) break;
+    if (i > 5) break; // Outof the loop
     print(i);
   }
 
   for (var i = 0; i < 10; ++i) {
-    if (i % 2 == 0) continue;
-    print("odd: $i"); // Fixed logic/typo
+    if (i % 2 == 0) continue; // Outof the loop
+    print("odd: $i"); 
   }
 }
+
+
