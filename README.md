@@ -122,4 +122,5 @@ Clean code metrics are protected using strict pre-commit hooks and analytical ru
 dark format.  
 <br/>\# Execute static analysis over strict rulesets  
 flutter analyze
+<br/>\
 **10\. Please Note that all the files own by Tanmoy Samanta shared for education purpose only**
