@@ -14,17 +14,16 @@ class Person {
 
 // 2. Class X (Fixed constructor name, static syntax, and duplicate variables)
 class X {
-  final String name; 
+  final String name;
   static const int age = 10; // Fixed static syntax error
 
   X(this.name);
 }
 
 void displayClass() {
-  var myX = X('Jack'); 
+  var myX = X('Jack');
   print(myX.name);
   print(X.age);
-  
   var y = X('jail');
   y = X('jaill');
   print(y.name);
@@ -34,10 +33,7 @@ void displayClass2() {
   final name = 'Mahamud';
   var age = 30;
   print(name);
-  print(age); 
-
-  // name = ''; 
-  age = 0; // 
+  print(age);
 }
 
 // 3. Vehicle & Car Classes (Cleaned up the duplicate code and created the Car class used in main)
@@ -67,8 +63,8 @@ class Car extends Vehicle {
 
 // 4. Rectangle Class (Fixed missing commas, duplicate parameters, and added missing right getter/setter)
 class Rectangle {
-  num left, top, width, height; ]
-  Rectangle(this.left, this.top, this.width, this.height); 
+  num left, top, width, height;
+  Rectangle(this.left, this.top, this.width, this.height);
   num get right => left + width;
   set right(num value) => left = value - width;
 
@@ -82,7 +78,7 @@ void main() {
   person1.showOutput();
 
   // Car Test
-  var car1 = Car('Accord', 2024, 15000); 
+  var car1 = Car('Accord', 2024, 15000);
   car1.showOutput();
   print(car1.price);
 
@@ -95,19 +91,19 @@ void main() {
   // Exception Handling Functions (Nested inside main)
   int mustGreaterThanZero(int val) {
     if (val <= 0) {
-      throw Exception('Value must be greater than zero'); 
+      throw Exception('Value must be greater than zero');
     }
     return val;
   }
 
   void leftoverfixTheValue(var val) {
-    var valueVerification; 
+    var valueVerification;
     try {
       valueVerification = mustGreaterThanZero(val);
     } catch (e) {
       print(e);
     } finally {
-      if (valueVerification == null) { 
+      if (valueVerification == null) {
         print('value is not acceptable');
       } else {
         print('value verified $valueVerification');
